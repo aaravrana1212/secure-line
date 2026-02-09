@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Secure Whitelist Chat</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="header">
+        <div>
+          <h1>Secret Communication Line</h1>
+          <p>Invite-only chat. Access requires a valid URL token and whitelisted username.</p>
+        </div>
+        <div class="status" id="status">Not connected</div>
+      </header>
+
+      <section class="panel" id="login-panel">
+        <h2>Login</h2>
+        <form id="login-form">
+          <label>
+            Username (whitelisted)
+            <input type="text" name="username" autocomplete="off" required />
+          </label>
+          <label>
+            Invite token (from URL)
+            <input type="text" name="token" id="token-field" readonly />
+          </label>
+          <button type="submit">Enter Secure Chat</button>
+          <p class="error" id="login-error"></p>
+        </form>
+      </section>
+
+      <section class="panel hidden" id="chat-panel">
+        <div class="chat-header">
+          <div>
+            <h2>Secure Room</h2>
+            <p class="subtitle">Messages are shared only with logged-in whitelisted members.</p>
+            <p class="subtitle">Entering the alert code triggers a live notification for everyone.</p>
+          </div>
+          <div class="user-pill" id="user-pill"></div>
+        </div>
+        <div class="chat-window" id="chat-window"></div>
+        <form class="composer" id="message-form">
+          <input type="text" id="message-input" placeholder="Type your message" required />
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

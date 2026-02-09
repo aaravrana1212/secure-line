@@ -1,0 +1,15 @@
+{
+  "name": "secure-whitelist-chat",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Whitelist-only chat with tokenized URL access and login.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "express-session": "^1.17.3",
+    "ws": "^8.17.1"
+  }
+}
