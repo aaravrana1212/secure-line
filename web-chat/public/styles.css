@@ -152,6 +152,16 @@ button:hover {
   margin-bottom: 6px;
 }
 
+.system-message {
+  text-align: center;
+  font-size: 12px;
+  color: #93c5fd;
+  background: #0f172a;
+  border: 1px solid #1e3a8a;
+  padding: 8px 12px;
+  border-radius: 999px;
+}
+
 .composer {
   display: grid;
   grid-template-columns: 1fr auto;

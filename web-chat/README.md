@@ -29,6 +29,7 @@ If `npm start` fails, confirm you are inside the `web-chat/` folder and that dep
 
 - Use HTTPS and a reverse proxy in production.
 - Host on a publicly reachable URL (cloud/VPS) so whitelisted members can access it worldwide.
+- Keep `whitelist`, `accessTokens`, and session secrets private and rotate them regularly.
 - Rotate invite tokens regularly.
 - Consider persisting chat history and user management in a secure database.
 
@@ -39,3 +40,7 @@ The UI is responsive and works on modern Android, iOS, and laptop browsers. Mobi
 ## Alert code usage
 
 Type the alert digits exactly (for example `911`) in the chat input and press Send. The server ignores whitespace, so `9 1 1` also triggers the alert.
+
+## Join alerts
+
+When a whitelisted user connects, everyone in the room sees a join notification in the chat window.

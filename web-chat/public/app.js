@@ -38,6 +38,14 @@ const appendMessage = (message) => {
   chatWindow.scrollTop = chatWindow.scrollHeight;
 };
 
+const appendSystemNotice = (notice) => {
+  const wrapper = document.createElement("div");
+  wrapper.className = "system-message";
+  wrapper.textContent = `${notice.user} joined at ${new Date(notice.at).toLocaleTimeString()}.`;
+  chatWindow.appendChild(wrapper);
+  chatWindow.scrollTop = chatWindow.scrollHeight;
+};
+
 const showAlert = (alert) => {
   if (!alertBanner) {
     alertBanner = document.createElement("div");
@@ -92,6 +100,9 @@ const connectSocket = () => {
     }
     if (data.type === "alert") {
       showAlert(data.alert);
+    }
+    if (data.type === "join") {
+      appendSystemNotice(data.notice);
     }
   });
 };

@@ -61,6 +61,18 @@ const wss = new WebSocketServer({ noServer: true });
 const messages = [];
 
 wss.on("connection", (ws, request, user) => {
+  const joinNotice = {
+    id: Date.now(),
+    user: user.username,
+    at: new Date().toISOString()
+  };
+  const joinOutgoing = JSON.stringify({ type: "join", notice: joinNotice });
+  wss.clients.forEach((client) => {
+    if (client.readyState === client.OPEN) {
+      client.send(joinOutgoing);
+    }
+  });
+
   ws.send(
     JSON.stringify({
       type: "history",
