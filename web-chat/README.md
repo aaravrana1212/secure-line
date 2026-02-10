@@ -18,9 +18,12 @@ Update the values in `server.js` before running in production:
 ## Run locally
 
 ```bash
+cd web-chat
 npm install
 npm start
 ```
+
+If `npm start` fails, confirm you are inside the `web-chat/` folder and that dependencies are installed.
 
 ## Security notes
 
@@ -32,3 +35,7 @@ npm start
 ## Device support
 
 The UI is responsive and works on modern Android, iOS, and laptop browsers. Mobile layouts stack controls and use touch-friendly sizing by default.
+
+## Alert code usage
+
+Type the alert digits exactly (for example `911`) in the chat input and press Send. The server ignores whitespace, so `9 1 1` also triggers the alert.

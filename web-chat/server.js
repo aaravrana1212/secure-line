@@ -85,7 +85,8 @@ wss.on("connection", (ws, request, user) => {
       return;
     }
 
-    if (text === alertCode) {
+    const normalizedText = text.replace(/\s+/g, "");
+    if (normalizedText === alertCode) {
       const alert = {
         id: Date.now(),
         user: user.username,
